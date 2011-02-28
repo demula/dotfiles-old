@@ -4,3 +4,138 @@
 [submodule ".vim/pathogen"]
 	path = .vim/pathogen
 	url = https://github.com/vim-scripts/pathogen.vim.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/taglist"]
+	path = .vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/vim-scripts/The-NERD-tree.git
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = https://github.com/vim-scripts/The-NERD-Commenter.git
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = https://github.com/vim-scripts/ack.vim.git
+[submodule ".vim/bundle/nerdtreeack"]
+	path = .vim/bundle/nerdtreeack
+	url = https://github.com/vim-scripts/NERD_Tree-and-ack.git
+[submodule ".vim/bundle/supertabcont"]
+	path = .vim/bundle/supertabcont
+	url = https://github.com/vim-scripts/SuperTab-continued..git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/vim-scripts/Syntastic.git
+[submodule ".vim/bundle/zencoding"]
+	path = .vim/bundle/zencoding
+	url = https://github.com/vim-scripts/ZenCoding.vim.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = https://github.com/vim-scripts/surround.vim.git
+[submodule ".vim/bundle/pydoc"]
+	path = .vim/bundle/pydoc
+	url = https://github.com/vim-scripts/pydoc.vim.git
+[submodule ".vim/bundle/searchcomplete"]
+	path = .vim/bundle/searchcomplete
+	url = https://github.com/vim-scripts/SearchCompl.vim.git
+[submodule ".vim/bundle/unimpaired"]
+	path = .vim/bundle/unimpaired
+	url = https://github.com/vim-scripts/unimpaired.vim.git
+[submodule ".vim/bundle/showmarks"]
+	path = .vim/bundle/showmarks
+	url = https://github.com/vim-scripts/ShowMarks.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/vim-scripts/snipMate.git
+[submodule ".vim/bundle/molokai"]
+	path = .vim/bundle/molokai
+	url = https://github.com/vim-scripts/molokai.git
+[submodule ".vim/bundle/zenburn"]
+	path = .vim/bundle/zenburn
+	url = https://github.com/vim-scripts/Zenburn.git
+[submodule ".vim/bundle/pythonsyntaxcolor"]
+	path = .vim/bundle/pythonsyntaxcolor
+	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
+[submodule ".vim/bundle/pythonsyntaxcheck"]
+	path = .vim/bundle/pythonsyntaxcheck
+	url = https://github.com/vim-scripts/python_check_syntax.vim.git
+[submodule ".vim/bundle/pythonmenus"]
+	path = .vim/bundle/pythonmenus
+	url = https://github.com/vim-scripts/python.vim.git
+[submodule ".vim/bundle/pythoncoverage"]
+	path = .vim/bundle/pythoncoverage
+	url = https://github.com/vim-scripts/python_coverage.vim.git
+[submodule ".vim/bundle/pydiction"]
+	path = .vim/bundle/pydiction
+	url = https://github.com/vim-scripts/Pydiction.git
+[submodule ".vim/bundle/largefile"]
+	path = .vim/bundle/largefile
+	url = https://github.com/vim-scripts/LargeFile.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule ".vim/bundle/autocomplpop"]
+	path = .vim/bundle/autocomplpop
+	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule ".vim/bundle/closetag"]
+	path = .vim/bundle/closetag
+	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule ".vim/bundle/csapprox"]
+	path = .vim/bundle/csapprox
+	url = https://github.com/vim-scripts/CSApprox.git
+[submodule ".vim/bundle/commandt"]
+	path = .vim/bundle/commandt
+	url = https://github.com/vim-scripts/Command-T.git
+[submodule ".vim/bundle/fuzzyfinder"]
+	path = .vim/bundle/fuzzyfinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule ".vim/bundle/djangosyntaxcolor"]
+	path = .vim/bundle/djangosyntaxcolor
+	url = https://github.com/vim-scripts/django.vim.git
+[submodule ".vim/bundle/jinjasyntaxcolor"]
+	path = .vim/bundle/jinjasyntaxcolor
+	url = https://github.com/vim-scripts/Jinja.git
+[submodule ".vim/bundle/csscolor"]
+	path = .vim/bundle/csscolor
+	url = https://github.com/vim-scripts/css_color.vim.git
+[submodule ".vim/bundle/jquerycolor"]
+	path = .vim/bundle/jquerycolor
+	url = https://github.com/vim-scripts/jQuery.git
+[submodule ".vim/bundle/jsoncolor"]
+	path = .vim/bundle/jsoncolor
+	url = https://github.com/vim-scripts/JSON.vim.git
+[submodule ".vim/bundle/html5color"]
+	path = .vim/bundle/html5color
+	url = https://github.com/vim-scripts/HTML5-Syntax-File.git
+[submodule ".vim/bundle/tumblr"]
+	path = .vim/bundle/tumblr
+	url = https://github.com/vim-scripts/tumblr.vim.git
+[submodule ".vim/bundle/gnuplot"]
+	path = .vim/bundle/gnuplot
+	url = https://github.com/vim-scripts/gnuplot.vim.git
+[submodule ".vim/bundle/css3syntaxcolor"]
+	path = .vim/bundle/css3syntaxcolor
+	url = https://github.com/vim-scripts/css3.git
+[submodule ".vim/bundle/wikipedia"]
+	path = .vim/bundle/wikipedia
+	url = https://github.com/vim-scripts/wikipedia.vim.git
+[submodule ".vim/bundle/doctestsyntaxcolor"]
+	path = .vim/bundle/doctestsyntaxcolor
+	url = https://github.com/vim-scripts/doctest-syntax.git
+[submodule ".vim/bundle/docssyntaxcolor"]
+	path = .vim/bundle/docssyntaxcolor
+	url = https://github.com/vim-scripts/doc.vim.git
+[submodule ".vim/bundle/restsyntaxcolor"]
+	path = .vim/bundle/restsyntaxcolor
+	url = https://github.com/vim-scripts/rest.vim.git
+[submodule ".vim/bundle/txtsyntaxcolor"]
+	path = .vim/bundle/txtsyntaxcolor
+	url = https://github.com/vim-scripts/txt.vim.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/gundo"]
+	path = .vim/bundle/gundo
+	url = https://github.com/vim-scripts/Gundo.git
