@@ -1,64 +1,77 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+#!/bin/bash
 
-# --------------------------------------------------------------------- OPTIONS
-shopt -s histappend
+# Load RVM, if you are using it
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+# Add rvm gems and nginx to the path
+export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
+
+# Path to the bash it configuration
+export BASH=$HOME/.bash_it
+
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_THEME='demula'
+
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@github.com'
+
+# Set my editor and git editor
+export EDITOR="vim"
+export GIT_EDITOR='vim'
+
+# Set the path nginx
+export NGINX_PATH='/opt/nginx'
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+# Change this to the path of your local jekyll root to use the jekyll aliases
+
+export JEKYLL_LOCAL_ROOT="$HOME/Sites/jekyllsite"
+
+# And change this to the remote server and root
+
+export JEKYLL_REMOTE_ROOT="user@server:/path/to/jekyll/root"
+
+# And, for the last of the jekyll variables, this is the formatting you use, eg: markdown,
+# textile, etc. Basically whatever you use as the extension for posts, without the preceding dot
+
+export JEKYLL_FORMATTING="markdown"
+
+# Change this to your console based IRC client of choice.
+
+export IRC_CLIENT='irssi'
+
+# Set this to the command you use for todo.txt-cli
+
+export TODO="t"
+
+# Set store directory for handmade commandline history tool 
+export hchtstoredir="$HOME/.hcht"
+
+# Set vcprompt executable path for scm advance info in prompt
+# https://github.com/xvzf/vcprompt
+export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 # --------------------------------------------------------------------- EXPORTS
-export EDITOR="vim"
-export TERM=gnome-terminal
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 export IGNOREEOF=1
 export PYTHONDONTWRITEBYTECODE=1
-export LESS=FRSX
-
-# ---------------------------------------------------------------- PATH INCLUDE
-export PATH=/usr/local/bin:$PATH
 
 # --------------------------------------------------------------------- ALIASES
-alias python='python2'
+# Google Appengine
 alias dev_appserver='python2 /home/demula/Apps/google_appengine/dev_appserver.py'
 alias appcfg='python2 /home/demula/Apps/google_appengine/appcfg.py'
-alias ls='ls --color=auto'
-alias rvim="gvim --remote-silent"
+
+alias rvim='gvim --remote-silent'
 alias ..='cd ..'
-
-# ----------------------------------------------------------------- COLOR THEME
-# colors
-MITSUHIKOS_DEFAULT_COLOR="[00m"
-MITSUHIKOS_GRAY_COLOR="[37m"
-MITSUHIKOS_PINK_COLOR="[35m"
-MITSUHIKOS_GREEN_COLOR="[32m"
-MITSUHIKOS_ORANGE_COLOR="[33m"
-MITSUHIKOS_RED_COLOR="[31m"
-# variables
-if [ `id -u` == '0' ]; then
-  MITSUHIKOS_USER_COLOR=$MITSUHIKOS_RED_COLOR
-else
-  MITSUHIKOS_USER_COLOR=$MITSUHIKOS_PINK_COLOR
-fi
-
-# ---------------------------------------------------------------- VCPROMPT CONF
-# vcprompt is used to add git/hg functionality to the prompt
-MITSUHIKOS_VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
-
-mitsuhikos_vcprompt() {
-  $MITSUHIKOS_VCPROMPT_EXECUTABLE -f $' on \033[34m%n\033[00m:\033[00m%[unknown]b\033[32m%m%u'
-}
+alias cls='clear'
+alias git='~/.hub/bin/hub' # https://github.com/defunkt/hub
 
 # ------------------------------------------------------------------- FUNCTIONS
-mitsuhikos_lastcommandfailed() {
-  code=$?
-  if [ $code != 0 ]; then
-    echo -n $'\033[37m exited \033[31m'
-    echo -n $code
-    echo -n $'\033[37m'
-  fi
-}
-
 mitsuhikos_backgroundjobs() {
-  jobs|python -c 'if 1:
+  jobs|python2 -c 'if 1:
     import sys
     items = ["\033[36m%s\033[37m" % x.split()[2]
              for x in sys.stdin.read().splitlines()]
@@ -100,15 +113,5 @@ unp() {
   fi
 }
 
-
-# --------------------------------------------------------------- FINAL DISPLAY
-export MITSUHIKOS_BASEPROMPT='\n\e${MITSUHIKOS_USER_COLOR}\u \
-\e${MITSUHIKOS_GRAY_COLOR}at \e${MITSUHIKOS_ORANGE_COLOR}\h \
-\e${MITSUHIKOS_GRAY_COLOR}in \e${MITSUHIKOS_GREEN_COLOR}\w\
-`mitsuhikos_lastcommandfailed`\
-\e${MITSUHIKOS_GRAY_COLOR}$(mitsuhikos_vcprompt)\
-`mitsuhikos_backgroundjobs`\
-\e${MITSUHIKOS_DEFAULT_COLOR}'
-export PS1="${MITSUHIKOS_BASEPROMPT}
-$ "
-
+# Load Bash It
+source $BASH/bash_it.sh
