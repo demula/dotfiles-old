@@ -1,0 +1,43 @@
+! ----------------------------------------------------------------------------
+! file:     ~/.Xdefaults
+! author:   Jesus de Mula Cano http://www.demula.name
+! modified: March 2011
+! vim:enc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+! ----------------------------------------------------------------------------
+
+! Resource: https://wiki.archlinux.org/index.php/Xdefaults
+
+! ------------------------------------------------------------ TERMINAL COLORS
+! monokai - http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/
+*background: #272822
+*foreground: #E2DA6E
+*color0: black
+! mild red
+*color1: #CD0000
+! light green
+*color2: #A5E02D
+! orange (yellow)
+*color3: #FB951F
+! "dark" blue
+*color4: #076BCC
+! hot pink
+*color5: #F6266C
+! cyan
+*color6: #64D9ED
+! gray
+*color7: #E5E5E5
+
+! --------------------------------------------------------------- XTERM CONFIG
+xterm*dynamicColors::    true
+xterm*utf8::             2
+xterm*eightBitInput::    true
+xterm*saveLines::        1024
+xterm*scrollTtyKeypress::       true
+xterm*scrollTtyOutput::  false
+xterm*scrollBar::        true
+xterm*loginShell::       true
+xterm*faceName::         Monaco:pixelsize=9
+xterm*jumpScroll::       true
+xterm*multiScroll::      true
+xterm*toolBar::          false
+xterm*geometry::         94x24 

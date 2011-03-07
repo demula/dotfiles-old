@@ -145,3 +145,6 @@
 [submodule ".vcprompt"]
 	path = .vcprompt
 	url = https://github.com/xvzf/vcprompt.git
+[submodule ".bash_it"]
+	path = .bash_it
+	url = https://github.com/revans/bash-it.git
