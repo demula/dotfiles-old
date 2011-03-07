@@ -148,3 +148,18 @@
 [submodule ".bash_it"]
 	path = .bash_it
 	url = https://github.com/revans/bash-it.git
+[submodule ".hub"]
+	path = .hub
+	url = https://github.com/defunkt/hub.git
+[submodule ".vim/bundle/sudo"]
+	path = .vim/bundle/sudo
+	url = https://github.com/vim-scripts/sudo.vim.git
+[submodule ".vim/bundle/gitcommit"]
+	path = .vim/bundle/gitcommit
+	url = https://github.com/vim-scripts/git-commit.git
+[submodule ".vim/bundle/tagmenu"]
+	path = .vim/bundle/tagmenu
+	url = https://github.com/vim-scripts/tagmenu.vim.git
+[submodule ".vim/bundle/muttrc"]
+	path = .vim/bundle/muttrc
+	url = https://github.com/vim-scripts/muttrc.vim.git
