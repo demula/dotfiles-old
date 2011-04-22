@@ -3,13 +3,14 @@
 "taken from all over the place...
 "---------------------------------------------------------------------
 
-"Load pathogen plugin manager
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
 set nocompatible
+set background=dark
+
+"Load pathogen plugin manager 
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 
 "set autowrite so pylint can write into the document
 set autowrite
@@ -19,9 +20,14 @@ set backspace=indent,eol,start
 
 "store lots of :cmdline history
 set history=1000
-colorscheme molokai "grb3
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
+
+"colors
+colorscheme molokai
+if !has("gui_running")
+  colorscheme molokai
+endif
 
 " Remember cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -30,7 +36,7 @@ set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 
 set nowrap      "dont wrap lines
-set linebreak   "wrap lines at convenient points
+"set linebreak   "wrap lines at convenient points
 
 "statusline setup
 set statusline=%f       "tail of the filename
@@ -39,10 +45,11 @@ set statusline=%f       "tail of the filename
 " highlightng as well as numbers.
 " And disable the sucking pydoc preview window for the omni completion
 " also highlight current line and disable the blinking cursor.
-set ruler
+"set ruler
 set guioptions-=T
 set gcr=a:blinkon0
 if has("gui_running")
+  set guifont=Monaco\ 11
   set cursorline
 endif
 set ttyfast
@@ -222,6 +229,10 @@ set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
 
+"make <c-l> clear the highlight as well as redraw
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
+
 " quicker window switching
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -248,11 +259,9 @@ set hidden
 "dont load csapprox if we no gui support - silences an annoying warning
 if !has("gui")
     let g:CSApprox_loaded = 1
+    set term=$TERM
+    colorscheme zenburn
 endif
-
-"make <c-l> clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer
 nnoremap <C-B> :BufExplorer<cr>
@@ -309,15 +318,15 @@ endfunction
 "---------------------------------------------------------------------
 
 " Preview page in chromium using 'Preview' command
-command Preview :!chromium %<CR>
+command Preview :!google-chrome %<CR>
 
 "---------------------------------------------------------------------
 " Docs shortcuts
 "---------------------------------------------------------------------
-command DocsGae :!chromium /home/demula/Apps/google_appengine/docs/index.html
-command DocsPython :!chromium http://docs.python.org/library/index.html
-command DocsRest :!chromium http://http://sphinx.pocoo.org/rest.html
-command DocsJinja :!chromium http://http://jinja.pocoo.org/docs/api/
+command DocsGae :!google-chrome /home/demula/Apps/google_appengine/docs/index.html
+command DocsPython :!google-chrome http://docs.python.org/library/index.html
+command DocsRest :!google-chrome http://http://sphinx.pocoo.org/rest.html
+command DocsJinja :!google-chrome http://http://jinja.pocoo.org/docs/api/
 
 "---------------------------------------------------------------------
 " Plugins
@@ -333,23 +342,11 @@ let g:pylint_conventions = 0
 let g:pylint_onfly = 0
 
 " by pydict
-let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict' 
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict' 
 
-"---------- Snipmate
-source ~/.vim/snippets/support_functions.vim
-autocmd vimenter * call s:SetupSnippets()
-function! s:SetupSnippets()
-
-    "if we're in a rails env then read in the rails snippets
-    if filereadable("./config/environment.rb")
-        call ExtractSnips("~/.vim/snippets/ruby-rails", "ruby")
-        call ExtractSnips("~/.vim/snippets/eruby-rails", "eruby")
-    endif
-
-    call ExtractSnips("~/.vim/snippets/html", "eruby")
-    call ExtractSnips("~/.vim/snippets/html", "xhtml")
-    call ExtractSnips("~/.vim/snippets/html", "php")
-endfunction
+" ----------- Pysyntaxchecker
+"g:pcs_hotkey " run the checker, the default is  <localleader>cs
+let g:pcs_check_when_saving = 0  " when true, the checker automaticlly run while saving, the default is true
 
 
 "---------------------------------------------------------------------
@@ -368,7 +365,6 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
 let python_highlight_all=1
 let python_highlight_exceptions=0
 let python_highlight_builtins=0
-command Pep8 :!pep8 %
 autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
 " ruby support
@@ -422,7 +418,7 @@ let html_no_rendering=1
 
 let g:closetag_default_xml=1
 autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/plugin/closetag.vim
+autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
 " GLSL
 " ----
